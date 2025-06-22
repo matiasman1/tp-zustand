@@ -1,12 +1,15 @@
-import {Header} from "../ui/Header/Header"
-import { ListTareas } from "../ui/ListTareas/ListTareas"
+import { Header } from '../ui/Header/Header'
+import { ListTareas } from '../ui/ListTareas/ListTareas'
 
 export const TareasScreen = () => {
-
   return (
-    <div>
-        <Header />
-        <ListTareas />
+    <div style={{ 
+      minHeight: '100vh', 
+      backgroundColor: 'var(--ubuntu-light-grey)',
+      color: 'var(--ubuntu-text-grey)'
+    }}>
+      <Header />
+      <ListTareas />
     </div>
   )
 }

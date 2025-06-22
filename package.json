@@ -1,13 +1,13 @@
 {
-  "name": "tp-zustand-castillo",
+  "name": "TPZustand",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.1.2",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
-    "bdDev": "npx json-server --watch db.json --port 3000",
+    "dbDev": "npx json-server --watch db.json --port 3000",
     "preview": "vite preview"
   },
   "dependencies": {

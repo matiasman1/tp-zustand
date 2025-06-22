@@ -2,11 +2,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 2rem;
+    padding: 24px;
     flex-direction: column;
-    gap: 1.5rem;
-    background-color: #f8f8f8;
-    min-height: calc(100vh - 70px);
+    gap: 20px;
+    background-color: var(--ubuntu-light-grey);
+    min-height: calc(100vh - 48px);
 }
 
 .containerTitleAndButton {
@@ -18,43 +18,51 @@
 }
 
 .titleListTareas {
-    color: #6b5ca5;
+    color: var(--ubuntu-text-grey);
     font-size: 1.5rem;
+    font-weight: 300;
     margin: 0;
 }
 
 .addButton {
-    background-color: #a3d9a5;
+    background-color: var(--ubuntu-orange);
     border: none;
-    padding: 0.8rem 1.5rem;
-    border-radius: 8px;
-    color: #2a2a2a;
-    font-weight: 600;
+    padding: 8px 16px;
+    border-radius: 4px;
+    color: white;
+    font-weight: 400;
     cursor: pointer;
-    transition: all 0.2s ease;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: all 0.15s ease;
+    box-shadow: 0 1px 2px var(--shadow-light);
+    font-size: 0.9rem;
 }
 
 .addButton:hover {
-    background-color: #8bc68e;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: var(--ubuntu-orange-light);
+    transform: translateY(-1px);
+    box-shadow: 0 2px 4px var(--shadow-medium);
+}
+
+.addButton:active {
+    background-color: var(--ubuntu-orange-dark);
+    transform: translateY(0);
 }
 
 .containerList {
     display: flex;
     align-items: center;
     flex-direction: column;
-    gap: 1rem;
-    padding: 1.5rem;
+    gap: 12px;
+    padding: 20px;
     width: 70%;
     max-width: 900px;
-    background-color: #fff;
+    background-color: var(--ubuntu-card-bg);
     min-height: 60vh;
     max-height: 62vh;
     overflow-y: auto;
-    border-radius: 12px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    border-radius: 8px;
+    box-shadow: 0 2px 8px var(--shadow-light);
+    border: 1px solid var(--ubuntu-border);
 }
 
 .emptyState {
@@ -64,10 +72,11 @@
     justify-content: center;
     height: 200px;
     width: 100%;
-    color: #9b9b9b;
+    color: var(--ubuntu-text-secondary);
 }
 
 .emptyState h3 {
-    font-weight: 500;
+    font-weight: 300;
     margin: 10px 0;
+    font-size: 1.1rem;
 }

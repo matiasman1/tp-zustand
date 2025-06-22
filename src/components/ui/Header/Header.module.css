@@ -1,23 +1,25 @@
 .containerHeader {
   width: 100%;
-  height: 70px;
-  background-color: #6b5ca5;
+  height: 48px;
+  background: linear-gradient(135deg, var(--ubuntu-dark-grey) 0%, #1A1A1A 100%);
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 8px var(--shadow-medium);
   position: sticky;
   top: 0;
   z-index: 10;
+  border-bottom: 1px solid var(--ubuntu-border);
 }
 
 .containerTitleHeader {
-  margin-left: 4vw;
+  margin-left: 16px;
 }
 
 .containerTitleHeader h2 {
-  color: #ffffff;
-  font-size: 1.8rem;
-  font-weight: 600;
+  color: var(--ubuntu-text-grey);
+  font-size: 1.1rem;
+  font-weight: 400;
   margin: 0;
+  letter-spacing: 0.5px;
 }

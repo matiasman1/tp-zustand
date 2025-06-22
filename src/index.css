@@ -1,4 +1,40 @@
-*{
+* {
     padding: 0;
     margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --ubuntu-orange: #E95420;
+    --ubuntu-orange-light: #F47068;
+    --ubuntu-orange-dark: #C73E1D;
+    --ubuntu-warm-grey: #77767B;
+    --ubuntu-cool-grey: #FFFFFF;
+    --ubuntu-light-grey: #2C2C2C;
+    --ubuntu-mid-grey: #3C3C3C;
+    --ubuntu-dark-grey: #1E1E1E;
+    --ubuntu-text-grey: #FFFFFF;
+    --ubuntu-text-secondary: #CDCDCD;
+    --ubuntu-purple: #AB7DF8;
+    --ubuntu-blue: #33C7DE;
+    --ubuntu-green: #26A269;
+    --ubuntu-red: #E01B24;
+    --ubuntu-card-bg: #383838;
+    --ubuntu-input-bg: #2C2C2C;
+    --ubuntu-border: #4A4A4A;
+    --ubuntu-hover-bg: #404040;
+    --ubuntu-tty-purple: #300A24;
+    --ubuntu-tty-purple-light: #4A1A3A;
+    --shadow-light: rgba(0, 0, 0, 0.3);
+    --shadow-medium: rgba(0, 0, 0, 0.4);
+    --shadow-heavy: rgba(0, 0, 0, 0.6);
+}
+
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+body {
+    font-family: 'Ubuntu', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: var(--ubuntu-light-grey);
+    color: var(--ubuntu-text-grey);
+    line-height: 1.6;
 }

@@ -7,9 +7,10 @@
     align-items: center;
     width: 100vw;
     height: 100vh;
-    backdrop-filter: brightness(80%) blur(4px);
+    backdrop-filter: blur(3px);
+    background-color: rgba(0, 0, 0, 0.6);
     z-index: 100;
-    animation: fadeIn 0.3s ease;
+    animation: fadeIn 0.2s ease;
 }
 
 @keyframes fadeIn {
@@ -18,135 +19,248 @@
 }
 
 .contentPopUp {
-    background-color: #fff;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    background-color: var(--ubuntu-card-bg);
+    box-shadow: 0 16px 64px var(--shadow-heavy);
     width: 90%;
     max-width: 500px;
     min-width: 300px;
-    padding: 1.5rem;
-    border-radius: 12px;
+    border-radius: 8px;
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
-    align-items: center;
-    justify-content: space-around;
-    animation: slideUp 0.3s ease-out;
     overflow: hidden;
     max-height: 90vh;
-    overflow-y: auto;
+    animation: slideUp 0.2s ease-out;
+    border: 1px solid var(--ubuntu-border);
 }
 
 @keyframes slideUp {
-    from { transform: translateY(30px); opacity: 0; }
+    from { transform: translateY(20px); opacity: 0; }
     to { transform: translateY(0); opacity: 1; }
 }
 
 .modalHeader {
-    width: 100%;
-    text-align: center;
-    color: #6b5ca5;
+    background: linear-gradient(135deg, var(--ubuntu-dark-grey) 0%, #1A1A1A 100%);
+    padding: 8px 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    border-bottom: 1px solid var(--ubuntu-border);
 }
 
 .modalHeader h3 {
+    color: white;
     margin: 0;
-    font-size: 1.4rem;
-    font-weight: 600;
+    font-size: 1rem;
+    font-weight: 400;
+    flex: 1;
+    text-align: center;
+    font-family: 'JetBrains Mono', 'Terminus', 'Courier New', monospace;
+}
+
+.windowControls {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    margin-left: auto;
+}
+
+.windowButton {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    transition: all 0.15s ease;
+    opacity: 0.9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: bold;
+    color: white;
+}
+
+.windowButton:hover {
+    opacity: 1;
+    transform: scale(1.05);
+}
+
+.closeButton {
+    background-color: var(--ubuntu-orange);
+}
+
+.closeButton::after {
+    content: "×";
+    font-size: 14px;
+}
+
+.minimizeButton {
+    background-color: transparent;
+    border-radius: 0;
+}
+
+.minimizeButton::after {
+    content: "_";
+    font-size: 14px;
+    color: white;
+}
+
+.maximizeButton {
+    background-color: transparent;
+    border-radius: 0;
+}
+
+.maximizeButton::after {
+    content: "□";
+    font-size: 12px;
+    color: white;
 }
 
 .formContent {
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
-    gap: 1rem;
-    width: 100%;
-    box-sizing: border-box;
+    padding: 20px;
+    gap: 16px;
+    background-color: var(--ubuntu-card-bg);
 }
 
 .inputGroup {
     display: flex;
     flex-direction: column;
-    width: 100%;
-    box-sizing: border-box;
+    gap: 12px;
 }
 
-.formContent input, 
-.formContent textarea {
+.terminalInput {
     width: 100%;
-    padding: 0.8rem;
-    border-radius: 8px;
-    border: 2px solid #e0e0e0;
+    padding: 12px 16px;
+    border-radius: 4px;
+    border: 2px solid #5D4E75;
+    background-color: var(--ubuntu-tty-purple);
+    color: #FFFFFF;
     resize: none;
-    margin: 0.4rem 0;
-    font-family: inherit;
-    transition: border-color 0.2s ease;
-    box-sizing: border-box;
+    font-family: 'JetBrains Mono', 'Terminus', 'Courier New', monospace;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
-.formContent input:focus,
-.formContent textarea:focus {
+.terminalInput:focus {
     outline: none;
-    border-color: #a3d9a5;
-    box-shadow: 0 0 0 3px rgba(163, 217, 165, 0.2);
+    border-color: var(--ubuntu-border);
+    background-color: var(--ubuntu-tty-purple-light);
+    box-shadow: 
+        inset 0 2px 4px rgba(0, 0, 0, 0.3),
+        0 0 0 2px rgba(74, 74, 74, 0.5);
+    color: #FFFFFF;
 }
 
-.formContent textarea {
-    min-height: 100px;
+.terminalInput::placeholder {
+    color: transparent;
+}
+
+.terminalInput[type="date"] {
+    color: #FFFFFF;
+    background-color: var(--ubuntu-tty-purple);
+}
+
+.terminalInput[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert(1) hue-rotate(90deg) brightness(1.2);
+}
+
+.terminalInput[type="date"]:focus {
+    color: #FFFFFF;
+    background-color: var(--ubuntu-tty-purple-light);
+}
+
+/* Remove problematic overlay styles */
+.terminalDisplay {
+    display: none;
+}
+
+.terminalText {
+    display: none;
+}
+
+.hiddenInput {
+    display: none;
 }
 
 .buttonCards {
     display: flex;
-    justify-content: space-around;
-    width: 100%;
-    margin-top: 0.5rem;
-    flex-wrap: wrap;
-    gap: 0.5rem;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-top: 8px;
 }
 
 .cancelButton, .actionButton {
     border: none;
-    padding: 0.8rem 1.5rem;
-    border-radius: 8px;
-    font-weight: 600;
+    padding: 8px 16px;
+    border-radius: 4px;
+    font-weight: 400;
     cursor: pointer;
-    transition: all 0.2s ease;
-    min-width: 120px;
-    margin: 0.25rem;
+    transition: all 0.15s ease;
+    font-size: 0.9rem;
 }
 
 .cancelButton {
-    background-color: #f1f1f1;
-    color: #444;
+    background-color: #6C6C6C;
+    color: white;
+    border: 1px solid #5A5A5A;
 }
 
 .cancelButton:hover {
-    background-color: #e5e5e5;
+    background-color: #7A7A7A;
 }
 
 .actionButton {
-    background-color: #a3d9a5;
-    color: #2a2a2a;
+    background-color: var(--ubuntu-orange);
+    color: white;
 }
 
 .actionButton:hover {
-    background-color: #8bc68e;
-    transform: translateY(-2px);
+    background-color: var(--ubuntu-orange-light);
+    transform: translateY(-1px);
 }
 
-/* Ajustes para dispositivos móviles */
+.actionButton:active {
+    background-color: var(--ubuntu-orange-dark);
+    transform: translateY(0);
+}
+
 @media screen and (max-width: 600px) {
     .contentPopUp {
         width: 95%;
-        padding: 1.2rem;
+        margin: 20px;
     }
     
-    .formContent input, 
-    .formContent textarea {
-        padding: 0.7rem;
+    .windowControls {
+        gap: 6px;
+    }
+    
+    .windowButton {
+        width: 18px;
+        height: 18px;
+        font-size: 10px;
+    }
+    
+    .closeButton::after {
+        font-size: 12px;
+    }
+    
+    .minimizeButton::after,
+    .maximizeButton::after {
+        font-size: 8px;
+    }
+    
+    .buttonCards {
+        flex-direction: column;
+        gap: 8px;
     }
     
     .cancelButton, .actionButton {
-        flex: 1;
-        padding: 0.7rem 1rem;
-        min-width: unset;
+        width: 100%;
     }
 }

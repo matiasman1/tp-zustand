@@ -17,6 +17,18 @@
       "titulo": "Hacer el tp",
       "descripcion": "Hacer el tp de zustand con react y typescript",
       "fechaLimite": "2025-05-31"
+    },
+    {
+      "id": "84ac853c-5ed0-4ebd-ab16-0f9957ef01d0",
+      "titulo": "Editar Styling para parecerse a Ubuntu Yaru",
+      "descripcion": "Editar los Css de los modales, lista de tarjetas, header y lista de tareas para que la aplicacion parezca Ubuntu Yaru, y los campos de texto la terminal TTY",
+      "fechaLimite": "2025-06-22"
+    },
+    {
+      "id": "5ff035cc-6c8d-4304-91e3-c779e716e596",
+      "titulo": "Corregir apariencia TTY de los textboxes",
+      "descripcion": "hacer que el command prompt de los textboxes tenga verde en el adress de usuario y azul en la virgulilla",
+      "fechaLimite": "2025-06-22"
     }
   ]
 }

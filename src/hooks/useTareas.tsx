@@ -22,7 +22,15 @@ export const useTareas = () => {
         agregarNuevaTarea(nuevaTarea);
         try {
             await postNuevaTareas(nuevaTarea);
-            Swal.fire("Tarea creada", "La tarea fue creada con exito", "success");
+            Swal.fire({
+                title: "Tarea creada",
+                text: "La tarea fue creada con exito",
+                icon: "success",
+                background: '#383838',
+                color: '#FFFFFF',
+                confirmButtonColor: '#E95420',
+                confirmButtonText: 'OK'
+            });
         } catch (error) {
             eliminarUnaTarea(nuevaTarea.id!);
             console.error("Error creando tarea:", error);
@@ -34,7 +42,15 @@ export const useTareas = () => {
         editarUnaTarea(tareaEditada);
         try {
             await editarTareas(tareaEditada);
-            Swal.fire("Tarea editada", "La tarea fue editada con exito", "success");
+            Swal.fire({
+                title: "Tarea editada",
+                text: "La tarea fue editada con exito",
+                icon: "success",
+                background: '#383838',
+                color: '#FFFFFF',
+                confirmButtonColor: '#E95420',
+                confirmButtonText: 'OK'
+            });
         } catch (error) {
             if (estadoPrevio) editarUnaTarea(estadoPrevio);
             console.error("Error editando tarea:", error);
@@ -50,12 +66,24 @@ export const useTareas = () => {
             showCancelButton: true,
             confirmButtonText: "Si, eliminar",
             cancelButtonText: "Cancelar",
+            background: '#383838',
+            color: '#FFFFFF',
+            confirmButtonColor: '#E01B24',
+            cancelButtonColor: '#6C6C6C'
         });
         if (!confirm.isConfirmed) return;
         eliminarUnaTarea(idTarea);
         try {
             await eliminarTareaPorId(idTarea);
-            Swal.fire("Tarea eliminada", "La tarea fue eliminada con exito", "success");
+            Swal.fire({
+                title: "Tarea eliminada",
+                text: "La tarea fue eliminada con exito",
+                icon: "success",
+                background: '#383838',
+                color: '#FFFFFF',
+                confirmButtonColor: '#E95420',
+                confirmButtonText: 'OK'
+            });
         } catch (error) {
             if (estadoPrevio) agregarNuevaTarea(estadoPrevio);
             console.error("Error eliminando tarea:", error);
