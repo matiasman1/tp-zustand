@@ -1,0 +1,22 @@
+{
+  "tareas": [
+    {
+      "id": "1",
+      "titulo": "Ver videos zustand",
+      "descripcion": "Ver los video de zustand para entender como funciona",
+      "fechaLimite": "2025-05-03"
+    },
+    {
+      "id": "2",
+      "titulo": "Ver videos react+typescript",
+      "descripcion": "ver los videos de react y typescript para entender como funciona",
+      "fechaLimite": "2025-05-04"
+    },
+    {
+      "id": "3",
+      "titulo": "Hacer el tp",
+      "descripcion": "Hacer el tp de zustand con react y typescript",
+      "fechaLimite": "2025-05-31"
+    }
+  ]
+}
